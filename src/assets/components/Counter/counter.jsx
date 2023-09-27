@@ -1,14 +1,13 @@
-import "../Card/button";
+import React from 'react';
 
-
-const Counter = ({ count, sumar, restar, maxLimit, minLimit }) => {
+const Counter = ({ count, onIncrement, onDecrement }) => {
   return (
     <div>
-      <p>Valor: {count}</p>
-      <button onClick={sumar} disabled={count >= maxLimit}>Sumar</button>
-      <button onClick={restar} disabled={count <= minLimit}>Restar</button>
+      <button onClick={onIncrement}>Agregar</button>
+      <span>{count}</span>
+      <button onClick={onDecrement}>Restar</button>
     </div>
   );
-};
+}
 
 export default Counter;

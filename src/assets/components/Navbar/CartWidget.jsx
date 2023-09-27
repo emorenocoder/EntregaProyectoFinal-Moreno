@@ -1,15 +1,15 @@
-
-import { FaShoppingCart } from 'react-icons/fa';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const CartWidget = () => {
-  const itemCount = 3; // Número fijo (hardcodeado) para la notificación
-
   return (
-    <div className="cart-widget">
-      <FaShoppingCart className="cart-icon" />
-      <span className="cart-notification">{itemCount}</span>
+    <div>
+      <FontAwesomeIcon icon={faShoppingCart} />
     </div>
   );
-};
+}
 
 export default CartWidget;
+
+//Esta es mi manera de vincular iconos, pero no me salio 
