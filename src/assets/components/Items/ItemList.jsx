@@ -22,11 +22,11 @@ const CardItem = ({ item }) => {
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
         <Card.Text>{item.description}</Card.Text>
-        <Link>
-          <Button variant="primary">Ver Detalles</Button> 
+        <Link to={`/detalle/${item.id}`}>
+          <Button variant="primary">Ver Detalles</Button>
         </Link>
       </Card.Body>
-      <CounterContainer/>
+      <CounterContainer />
     </Card>
   );
 }

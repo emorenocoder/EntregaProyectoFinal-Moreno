@@ -1,14 +1,12 @@
-import React, {useEffect} from 'react';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const ItemDetail = ({ item }) => {
+function ItemDetail() {
+  const { id } = useParams();
   return (
     <div>
-      <h5>{item.title}</h5>
-      <img src={item.image} alt={item.title} /> 
-      <p>Descripción: {item.description}</p>
-      <p>Precio: {item.price}</p>
-      <p>Categoría: {item.category}</p>
-
+      <h2>Detalles del Producto</h2>
+      <p>ID del Producto: {id}</p>
     </div>
   );
 }
