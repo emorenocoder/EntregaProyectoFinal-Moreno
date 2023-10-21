@@ -1,15 +1,21 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import UserContext from '../../Context/userContext/userContext'
 
 const CartWidget = () => {
-  return (
-    <div>
-      <FontAwesomeIcon icon={faShoppingCart} />
-    </div>
-  );
+
+    const style = {
+        color: "white",
+        marginRight: "10px"
+    }
+    return (
+        <div style={style}>
+            <UserContext.Consumer>
+                {
+                    ({user}) => <p>Welcome,{ user.name}</p>
+                }
+            </UserContext.Consumer>
+        </div>
+    )
 }
 
-export default CartWidget;
-
-//Esta es mi manera de vincular iconos, pero no me salio 
+export default CartWidget

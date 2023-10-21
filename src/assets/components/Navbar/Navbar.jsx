@@ -1,36 +1,28 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-router-dom';
+import { FaCartPlus } from 'react-icons/fa';
+import CartWidget from './CartWidget';
+import './NavBar.css'
 
-function CollapsibleExample() {
+const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">EstiloAtemporal</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#productos">Productos</Nav.Link>
-            <Nav.Link href="#ofertas">Ofertas</Nav.Link>
-            <NavDropdown title="Categorías" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#ropa-hombre">Ropa para Hombre</NavDropdown.Item>
-              <NavDropdown.Item href="#ropa-mujer">Ropa para Mujer</NavDropdown.Item>
-              <NavDropdown.Item href="#accesorios">Accesorios</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#contacto">Contáctanos</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#carrito">Carrito de Compras</Nav.Link>
-            <Nav.Link eventKey={2} href="#contacto">
-              Contáctanos
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Brand>EstiloTemporal</Navbar.Brand>
+        <Nav className="me-auto">
+          <NavLink className="navlink" activeClassName="link-active" exact to="/">inicio</NavLink>
+          <NavLink className="navlink" activeClassName="link-active" to="/Jacket">Chaqueta</NavLink>
+          <NavLink className="navlink" activeClassName="link-active" to="/Jeans">Jeans</NavLink>
+          <NavLink className="navlink" activeClassName="link-active" to="/Shirt">Polera</NavLink>
+          <NavLink className="navlink" to="/cart"><FaCartPlus /></NavLink>
+        </Nav>
       </Container>
+      <CartWidget />
     </Navbar>
   );
 }
 
-export default CollapsibleExample;
+export default NavBar;

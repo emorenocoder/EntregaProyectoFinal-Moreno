@@ -1,43 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Row } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react'
+import { Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container';
 import ItemList from './ItemList';
+import { getData, getDocuments } from '../../Services/firebaseService';
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+ 
+    useEffect( () => {
+        const itemCollection = getDocuments("items")
+        getData(itemCollection).then(data => setItems(data))
 
-    const getData = () => {
-        fetch("http://fakestoreapi.com/products")
-            .then(response => response.json())
-            .then(data => {
-                setItems(data);
-                setLoading(false);
-            })
-            .catch(error => {
-                setError(error);
-                setLoading(false);
-            });
-    }
-
-    useEffect(() => {
-        getData();
-    }, []);
-
+    }, [])
     return (
         <Container>
             <Row>
-                {loading ? (
-                    <p>Cargando datos...</p>
-                ) : error ? (
-                    <p>Error al cargar datos: {error.message}</p>
-                ) : (
+                {
+                    items.length > 0 &&
                     <ItemList items={items} />
-                )}
+                }
             </Row>
         </Container>
-    );
+    )
 }
 
-export default ItemListContainer;
+export default ItemListContainer
+

@@ -1,0 +1,35 @@
+.item-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+  }
+  
+  .item-card {
+    width: calc(33.33% - 30px); 
+    margin: 0 15px 30px; 
+    box-sizing: border-box; 
+  }
+  
+  @media (max-width: 768px) {
+    .item-list-container {
+      justify-content: center;
+    }
+  
+    .item-card {
+      width: calc(50% - 30px); 
+      margin: 0 15px 30px; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .item-list-container {
+      justify-content: center;
+    }
+  
+    .item-card {
+      width: calc(100% - 30px); 
+      margin: 0 15px 30px; 
+    }
+  }
+  

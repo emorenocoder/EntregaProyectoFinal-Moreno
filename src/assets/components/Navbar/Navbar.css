@@ -1,0 +1,55 @@
+/* Estilos para el Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a la izquierda y derecha */
+  background-color: #343a40; /* Color de fondo */
+}
+
+.navbar-brand {
+  color: #fff; /* Color del texto del logotipo */
+}
+
+/* Estilos para los enlaces de navegación */
+.navlink {
+  color: #fff; /* Color del texto de los enlaces */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  text-decoration: none; /* Elimina la subrayado de los enlaces */
+  transition: color 0.2s; /* Transición de color suave al pasar el mouse */
+}
+
+.navlink:hover {
+  color: #17a2b8; /* Cambia el color al pasar el mouse */
+}
+
+.link-active {
+  color: #17a2b8; /* Color de enlace activo */
+}
+
+/* Estilos para el ícono del carrito */
+.navlink-cart {
+  font-size: 1.5rem; /* Tamaño del ícono */
+  margin-left: 1rem; /* Espaciado a la derecha del ícono para separarlo de los enlaces */
+}
+
+/* Estilos para el contenedor del carrito */
+.cart-widget {
+  display: flex;
+  align-items: center;
+  color: #fff; /* Color del texto */
+  padding: 0.5rem;
+  background-color: #17a2b8; /* Color de fondo del contenedor del carrito */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para el ícono del carrito dentro del contenedor del carrito */
+.cart-widget-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem; /* Espaciado a la derecha del ícono dentro del contenedor */
+}
+
+/* Estilos para el número de artículos en el carrito (si aplicable) */
+.cart-item-count {
+  font-size: 0.9rem;
+  font-weight: bold; /* Texto en negrita */
+  margin-right: 0.2rem;
+}

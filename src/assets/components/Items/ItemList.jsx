@@ -1,34 +1,21 @@
 import React from 'react';
-import { Col, Card, Button } from 'react-bootstrap';
-import CounterContainer from '../Counter/countercontainer';
-import { Link } from 'react-router-dom';
+import { Col } from 'react-bootstrap';
+import CardItem from './CardItem';
 
 const ItemList = ({ items }) => {
-  return (
-    <>
-      {items.map((item, index) => (
-        <Col key={index} md={4} lg={4} xs={12}>
-          <CardItem item={item} />
-        </Col>
-      ))}
-    </>
-  );
-}
+  const renderItems = () => {
+    if (!items || items.length === 0) {
+      return <div>No hay elementos para mostrar</div>;
+    }
 
-const CardItem = ({ item }) => {
-  return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={item.image} />
-      <Card.Body>
-        <Card.Title>{item.title}</Card.Title>
-        <Card.Text>{item.description}</Card.Text>
-        <Link to={`/detalle/${item.id}`}>
-          <Button variant="primary">Ver Detalles</Button>
-        </Link>
-      </Card.Body>
-      <CounterContainer />
-    </Card>
-  );
-}
+    return items.map((item) => (
+      <Col md={4} lg={4} sm={12} key={item.id}>
+        <CardItem item={item} />
+      </Col>
+    ));
+  };
+
+  return <>{renderItems()}</>;
+};
 
 export default ItemList;

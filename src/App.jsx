@@ -1,28 +1,28 @@
-import React from 'react';
-import CollapsibleExample from './assets/components/Navbar/Navbar';
-import ItemListContainer from './assets/components/Items/ItemListContainer';
-import ItemDetail from './assets/components/details/ItemDetail';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react'
+import NavBar from './assets/components/Navbar/Navbar'
+import CartContextProvider from './assets/Context/CartContext/cartContextProvider'
+import RoutesComponent from './assets/Routes/routesComponent'
+import UserContextProvider from './assets/Context/userContext/userContexProvider'
+import Footer from './assets/components/Footer/Footer'
+
 
 const App = () => {
   return (
     <>
-      <CollapsibleExample />
-      <Routes>
-      <Route path="/" exact component={<ItemListContainer/>} />
-        <Route path="/detalle/:id" component={<ItemDetail/>} />
-      </Routes>
-      <ItemListContainer />
+    <div className="page-container">
+    <div className= "content-wrap">
+      <CartContextProvider>
+        <UserContextProvider>
+          <NavBar />
+          <RoutesComponent />
+        </UserContextProvider>
+      </CartContextProvider>
+
+      </div>
+        <Footer />
+      </div>
     </>
-  );
-};
-
-export default App;
-
-function Home() {
-  return <h1>Esta es la página de inicio</h1>;
+  )
 }
 
-function Detalle() {
-  return <h1>Detalles del elemento con ID: {id}</h1>;
-}
+export default App
