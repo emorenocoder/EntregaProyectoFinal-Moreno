@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import ItemDetail from './ItemDetail'
 import CartContext from '../../Context/CartContext/cartContext';
-import { getOneDocument } from '../../Services/firebaseService';
+import { getOneDocument } from '../../services/firebaseService';
 
 const ItemDetailContainer = ({ id }) => {
     const [item, setitem] = useState(null);
@@ -27,7 +27,4 @@ const ItemDetailContainer = ({ id }) => {
 }
 
 export default ItemDetailContainer
-
-
-
 

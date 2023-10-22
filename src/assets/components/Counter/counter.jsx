@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 
-const Counter = ({onAdd, text = "Agregar al carrito", q = 1}) => {
+const Counter = ({onAdd, text = "Agregar al carrito", q = 1, stock}) => {
     const [count, setCount] = useState(q)
 
     const increment = () => {
-        
-        setCount(count + 1)
-    }
-    const decrement = () => {
-        if(count > 1){
-            setCount(count - 1)
+        if (count < stock) {
+          setCount(count + 1);
         }
-    }
+      };
+      const decrement = () => {
+        if (count > 1) {
+          setCount(count - 1);
+        }
+      };
   return (
     <div>
         <button onClick={increment}>Agregar</button>
@@ -23,3 +24,6 @@ const Counter = ({onAdd, text = "Agregar al carrito", q = 1}) => {
 }
 
 export default Counter
+
+
+  

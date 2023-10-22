@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import ItemListContainer from '../components/Items/ItemListContainer';
+import { useParams } from 'react-router';
 
 const Shirt = () => {
+  const params = useParams();
   return (
     <div>
-      <h5>hola</h5>
+      <ItemListContainer category="Polera" />
     </div>
-  )
+  );
 }
 
-export default Shirt
+export default Shirt;

@@ -1,13 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import CardItem from '../components/Items/CardItem'
+import ItemDetailContainer from '../components/Details/ItemDetailContainer'
 
 const Detalle = () => {
-    const {id} = useParams()
-
+    const { id } = useParams()
   return (
     <div>
-       <CardItem id={id}/>
+      <ItemDetailContainer id={id}/>
     </div>
   )
 }
